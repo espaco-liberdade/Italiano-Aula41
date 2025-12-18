@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passaporte Italiano - Aula 41</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fcfcfc;
+      color: #333;
+      line-height: 1.7;
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Lora', serif;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      padding: 15px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #008C45 0%, #F4F5F0 50%, #CD212A 100%);
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    h2 {
+      color: #005a2c; /* Verde escuro */
+      border-bottom: 2px solid #CD212A; /* Vermelho */
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+    h3 {
+      color: #b21b22; /* Vermelho escuro */
+    }
+    code {
+      background: #eef8f2;
+      padding: 3px 7px;
+      border-radius: 5px;
+      font-size: 0.95em;
+      border: 1px solid #d0e8d9;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 1em;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      vertical-align: middle;
+    }
+    th {
+      background-color: #008C45; /* Verde */
+      color: white;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+    /* Estilo atualizado para o botão de áudio */
+    .audio-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.3em;
+      color: #CD212A;
+      transition: transform 0.2s;
+      padding: 0;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+    .audio-btn:hover {
+        transform: scale(1.2);
+    }
+    .nota-gramatical, .nota-dica, .bloco-cultural {
+      background: #fdfbeA;
+      border-left: 5px solid #008C45; /* Verde */
+      padding: 15px 20px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .nota-dica { border-left-color: #CD212A; background: #fff0f1; }
+    .bloco-cultural { border-left-color: #005a2c; background: #eef8f2; }
+    .secao-exercicios {
+      background-color: #f4f9ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border: 1px solid #d1e3ff;
+    }
+    .exercise-list li { margin-bottom: 15px; }
+    .pronuncia-guia {
+        font-style: italic;
+        color: #555;
+    }
+    .ipa {
+        font-family: 'Courier New', Courier, monospace;
+        color: #444;
+    }
+    .gabarito-section {
+        background-color: #fff8e1;
+        border: 1px solid #ffecb3;
+        padding: 20px;
+        margin-top: 40px;
+        border-radius: 8px;
+    }
+  </style>
+  <script>
+    function playAudio(text) {
+      if ('speechSynthesis' in window) {
+        // Cancela qualquer áudio anterior
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'it-IT'; // Define o idioma para Italiano
+        utterance.rate = 0.9; // Velocidade um pouco mais natural (opcional)
+
+        // Tenta encontrar uma voz italiana específica (opcional, mas melhora a qualidade se disponível)
+        const voices = window.speechSynthesis.getVoices();
+        const italianVoice = voices.find(voice => voice.lang.includes('it'));
+        if (italianVoice) {
+            utterance.voice = italianVoice;
+        }
+
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Desculpe, seu navegador não suporta a reprodução automática de áudio.");
+      }
+    }
+    
+    // Carrega as vozes assim que estiverem disponíveis (correção para alguns navegadores)
+    window.speechSynthesis.onvoiceschanged = function() {
+        window.speechSynthesis.getVoices();
+    };
+  </script>
+</head>
+<body>
+
+<h1>📘 Aula 41: Enfrentando a Burocracia 🇮🇹<br>(Affrontare la Burocrazia)</h1>
+
+<!-- Introdução -->
+<h2>1. Introdução</h2>
+<p><em>Benvenuto/a al Modulo 5!</em> Iniciamos a nossa etapa final com um tema prático e inevitável para quem busca a cidadania: a burocracia. Para navegar por este mundo de documentos e processos, precisamos de um italiano preciso e sofisticado. Nesta aula, vamos aprender a expressar dúvidas, esperanças e opiniões sobre eventos que já aconteceram, usando o <strong>Congiuntivo Passato</strong>. Juntamente com um vocabulário burocrático específico, esta ferramenta gramatical permitirá que você se comunique com clareza e formalidade em repartições públicas. Dominar o subjuntivo do passado é uma marca de um falante verdadeiramente avançado. <em>Spero che tu abbia studiato, perché iniziamo!</em> (Espero que você tenha estudado, porque vamos começar!)</p>
+
+<!-- Vocabulário -->
+<h2>2. Vocabulário-chave: Documentos e Processos</h2>
+<table>
+  <tr>
+    <th>Italiano + Áudio</th>
+    <th>Tradução / Pronúncia</th>
+    <th>Italiano + Áudio</th>
+    <th>Tradução / Pronúncia</th>
+  </tr>
+  <tr>
+    <td><strong>La burocrazia</strong> <button class="audio-btn" onclick="playAudio('La burocrazia')">🔊</button></td>
+    <td>A burocracia<br><span class="ipa">/la bu.ro.kratˈtsi.a/</span><br><span class="pronuncia-guia">(La bu-ro-cra-TSÍ-a)</span></td>
+    <td><strong>La scadenza</strong> <button class="audio-btn" onclick="playAudio('La scadenza')">🔊</button></td>
+    <td>O prazo<br><span class="ipa">/la skaˈdɛn.tsa/</span><br><span class="pronuncia-guia">(La sca-DÊN-tsa)</span></td>
+  </tr>
+  <tr>
+    <td><strong>L'ufficio anagrafe</strong> <button class="audio-btn" onclick="playAudio('L\'ufficio anagrafe')">🔊</button></td>
+    <td>O cartório de registro civil<br><span class="ipa">/lufˈfi.tʃo aˈna.ɡra.fe/</span><br><span class="pronuncia-guia">(Luf-FÍ-tcho a-NÁ-gra-fe)</span></td>
+    <td><strong>Il permesso di soggiorno</strong> <button class="audio-btn" onclick="playAudio('Il permesso di soggiorno')">🔊</button></td>
+    <td>A permissão de residência<br><span class="ipa">/il perˈmes.so di sodˈdʒor.no/</span><br><span class="pronuncia-guia">(Il per-MÉS-so di so-DJÓR-no)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Il comune</strong> <button class="audio-btn" onclick="playAudio('Il comune')">🔊</button></td>
+    <td>A prefeitura<br><span class="ipa">/il koˈmu.ne/</span><br><span class="pronuncia-guia">(Il co-MÚ-ne)</span></td>
+    <td><strong>La carta d'identità</strong> <button class="audio-btn" onclick="playAudio('La carta d\'identità')">🔊</button></td>
+    <td>A carteira de identidade<br><span class="ipa">/la ˈkar.ta di.den.tiˈta/</span><br><span class="pronuncia-guia">(La CÁR-ta di-den-ti-TÁ)</span></td>
+  </tr>
+    <tr>
+    <td><strong>La questura</strong> <button class="audio-btn" onclick="playAudio('La questura')">🔊</button></td>
+    <td>A delegacia de polícia<br><span class="ipa">/la kweˈstu.ra/</span><br><span class="pronuncia-guia">(La ques-TÚ-ra)</span></td>
+    <td><strong>Il codice fiscale</strong> <button class="audio-btn" onclick="playAudio('Il codice fiscale')">🔊</button></td>
+    <td>O CPF italiano<br><span class="ipa">/il ˈkɔ.di.tʃe fiˈska.le/</span><br><span class="pronuncia-guia">(Il CÓ-di-tche fis-CÁ-le)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Il certificato</strong> <button class="audio-btn" onclick="playAudio('Il certificato')">🔊</button></td>
+    <td>O certificado, a certidão<br><span class="ipa">/il tʃer.ti.fiˈka.to/</span><br><span class="pronuncia-guia">(Il tcher-ti-fi-CÁ-to)</span></td>
+    <td><strong>La pratica</strong> <button class="audio-btn" onclick="playAudio('La pratica')">🔊</button></td>
+    <td>O processo, o trâmite<br><span class="ipa">/la ˈpra.ti.ka/</span><br><span class="pronuncia-guia">(La PRÁ-ti-ca)</span></td>
+  </tr>
+   <tr>
+    <td><strong>La domanda</strong> <button class="audio-btn" onclick="playAudio('La domanda')">🔊</button></td>
+    <td>O pedido, a solicitação<br><span class="ipa">/la doˈman.da/</span><br><span class="pronuncia-guia">(La do-MÁN-da)</span></td>
+    <td><strong>Richiedere</strong> <button class="audio-btn" onclick="playAudio('Richiedere')">🔊</button></td>
+    <td>Solicitar<br><span class="ipa">/riˈkjɛ.de.re/</span><br><span class="pronuncia-guia">(Ri-QUIÉ-de-re)</span></td>
+  </tr>
+   <tr>
+    <td><strong>Il modulo</strong> <button class="audio-btn" onclick="playAudio('Il modulo')">🔊</button></td>
+    <td>O formulário<br><span class="ipa">/il ˈmɔ.du.lo/</span><br><span class="pronuncia-guia">(Il MÓ-du-lo)</span></td>
+    <td><strong>Compilare</strong> <button class="audio-btn" onclick="playAudio('Compilare')">🔊</button></td>
+    <td>Preencher<br><span class="ipa">/kom.piˈla.re/</span><br><span class="pronuncia-guia">(Com-pi-LÁ-re)</span></td>
+  </tr>
+   <tr>
+    <td><strong>La firma</strong> <button class="audio-btn" onclick="playAudio('La firma')">🔊</button></td>
+    <td>A assinatura<br><span class="ipa">/la ˈfir.ma/</span><br><span class="pronuncia-guia">(La FÍR-ma)</span></td>
+    <td><strong>Presentare</strong> <button class="audio-btn" onclick="playAudio('Presentare')">🔊</button></td>
+    <td>Apresentar, Entregar<br><span class="ipa">/pre.zenˈta.re/</span><br><span class="pronuncia-guia">(Pre-zen-TÁ-re)</span></td>
+  </tr>
+    <tr>
+    <td><strong>Lo sportello</strong> <button class="audio-btn" onclick="playAudio('Lo sportello')">🔊</button></td>
+    <td>O guichê<br><span class="ipa">/lo sporˈtɛl.lo/</span><br><span class="pronuncia-guia">(Lo spor-TÉL-lo)</span></td>
+    <td><strong>Valido/a</strong> <button class="audio-btn" onclick="playAudio('Valido')">🔊</button></td>
+    <td>Válido/a<br><span class="ipa">/ˈva.li.do/</span><br><span class="pronuncia-guia">(VÁ-li-do)</span></td>
+  </tr>
+    <tr>
+    <td><strong>Il funzionario</strong> <button class="audio-btn" onclick="playAudio('Il funzionario')">🔊</button></td>
+    <td>O funcionário público<br><span class="ipa">/il fun.tsjoˈna.rjo/</span><br><span class="pronuncia-guia">(Il fun-tsio-NÁ-rio)</span></td>
+    <td><strong>Scaduto/a</strong> <button class="audio-btn" onclick="playAudio('Scaduto')">🔊</button></td>
+    <td>Vencido/a<br><span class="ipa">/skaˈdu.to/</span><br><span class="pronuncia-guia">(Sca-DÚ-to)</span></td>
+  </tr>
+</table>
+
+<!-- Gramática Essencial -->
+<h2>3. Gramática Essencial</h2>
+<div class="nota-gramatical">
+  <h4>💡 Il Congiuntivo Passato</h4>
+  <p>O Congiuntivo Passato é o tempo composto do subjuntivo. Ele é usado depois das mesmas expressões que pedem o Congiuntivo Presente (<em>penso che, spero che, è possibile che...</em>), mas com uma diferença crucial: a ação na frase subordinada aconteceu <strong>antes</strong> da ação na frase principal.</p>
+  
+  <h4>Como se Forma o Congiuntivo Passato?</h4>
+  <p>A fórmula é muito parecida com a do Passato Prossimo. A diferença é que o verbo auxiliar está no <strong>CONGIUNTIVO PRESENTE</strong>.</p>
+  <p><strong>Fórmula: [ Auxiliar ESSERE ou AVERE no Congiuntivo Presente ] + [ Particípio Passado ]</strong></p>
+   <table>
+    <tr><th>Pessoa</th><th>AVERE (Congiuntivo)</th><th>ESSERE (Congiuntivo)</th></tr>
+    <tr><td>(che) io</td><td><strong>abbia</strong></td><td><strong>sia</strong></td></tr>
+    <tr><td>(che) tu</td><td><strong>abbia</strong></td><td><strong>sia</strong></td></tr>
+    <tr><td>(che) lui/lei</td><td><strong>abbia</strong></td><td><strong>sia</strong></td></tr>
+    <tr><td>(che) noi</td><td><strong>abbiamo</strong></td><td><strong>siamo</strong></td></tr>
+    <tr><td>(che) voi</td><td><strong>abbiate</strong></td><td><strong>siate</strong></td></tr>
+    <tr><td>(che) loro</td><td><strong>abbiano</strong></td><td><strong>siano</strong></td></tr>
+  </table>
+  <p><strong>Lembre-se:</strong> A escolha do auxiliar (<em>essere/avere</em>) e as regras de concordância do particípio são <strong>exatamente as mesmas</strong> do Passato Prossimo.</p>
+
+  <h4>Congiuntivo Presente vs Passato</h4>
+    <table>
+        <tr><th>Tempo Verbal</th><th>Uso</th><th>Exemplo + Áudio</th></tr>
+        <tr><td><strong>Congiuntivo Presente</strong></td><td>A ação subordinada é <strong>contemporânea ou futura</strong> em relação à principal.</td><td>Penso che Marco <strong>sia</strong> a casa adesso. <button class="audio-btn" onclick="playAudio('Penso che Marco sia a casa adesso.')">🔊</button> (Acho que Marco está em casa agora.)<br>Spero che tu <strong>venga</strong> domani. <button class="audio-btn" onclick="playAudio('Spero che tu venga domani.')">🔊</button> (Espero que você venha amanhã.)</td>
+        </tr>
+        <tr><td><strong>Congiuntivo Passato</strong></td><td>A ação subordinada é <strong>anterior</strong> à principal.</td><td>Penso che Marco <strong>sia andato</strong> a casa ieri. <button class="audio-btn" onclick="playAudio('Penso che Marco sia andato a casa ieri.')">🔊</button> (Acho que Marco foi para casa ontem.)<br>Spero che tu <strong>abbia ricevuto</strong> il mio messaggio. <button class="audio-btn" onclick="playAudio('Spero che tu abbia ricevuto il mio messaggio.')">🔊</button> (Espero que você tenha recebido minha mensagem.)</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Frases Essenciais -->
+<h2>4. Frases Essenciais para o Dia a Dia</h2>
+<table>
+    <tr><th>Italiano + Áudio</th><th>Pronúncia (IPA / Simplificada)</th><th>Tradução</th></tr>
+    <tr><td>1. Credo che l'ufficio anagrafe abbia già chiuso. <button class="audio-btn" onclick="playAudio('Credo che l\'ufficio anagrafe abbia già chiuso.')">🔊</button></td><td><span class="ipa">/ˈkre.do ke lufˈfi.tʃo aˈna.ɡra.fe ˈab.bja ˈdʒa ˈkju.zo/</span><br><span class="pronuncia-guia">(CRÊ-do ke luf-FÍ-tcho a-NÁ-gra-fe ÁB-bia djá QUIÚ-zo)</span></td><td>Acredito que o cartório já tenha fechado.</td></tr>
+    <tr><td>2. Spero che tu abbia portato tutti i documenti necessari. <button class="audio-btn" onclick="playAudio('Spero che tu abbia portato tutti i documenti necessari.')">🔊</button></td><td><span class="ipa">/ˈspɛ.ro ke tu ˈab.bja porˈta.to ˈtut.ti i do.kuˈmen.ti ne.tʃesˈsa.ri/</span><br><span class="pronuncia-guia">(SPÉ-ro ke tu ÁB-bia por-TÁ-to TÚT-ti i do-cu-MÊN-ti ne-tches-SÁ-ri)</span></td><td>Espero que você tenha trazido todos os documentos necessários.</td></tr>
+    <tr><td>3. È possibile che io abbia sbagliato a compilare il modulo. <button class="audio-btn" onclick="playAudio('È possibile che io abbia sbagliato a compilare il modulo.')">🔊</button></td><td><span class="ipa">/ɛ posˈsi.bi.le ke ˈi.o ˈab.bja zbaʎˈʎa.to a kom.piˈla.re il ˈmɔ.du.lo/</span><br><span class="pronuncia-guia">(É pos-SÍ-bi-le ke Í-o ÁB-bia zba-LHIÁ-to a com-pi-LÁ-re il MÓ-du-lo)</span></td><td>É possível que eu tenha errado ao preencher o formulário.</td></tr>
+    <tr><td>4. Mi sembra che il funzionario non sia stato molto gentile. <button class="audio-btn" onclick="playAudio('Mi sembra che il funzionario non sia stato molto gentile.')">🔊</button></td><td><span class="ipa">/mi ˈsem.bra ke il fun.tsjoˈna.rjo non ˈsi.a ˈsta.to ˈmol.to dʒenˈti.le/</span><br><span class="pronuncia-guia">(Mi SÊM-bra ke il fun-tsio-NÁ-rio non SÍ-a STÁ-to MÓL-to djen-TÍ-le)</span></td><td>Me parece que o funcionário não foi muito gentil.</td></tr>
+    <tr><td>5. Temo che loro non abbiano ricevuto la mia domanda. <button class="audio-btn" onclick="playAudio('Temo che loro non abbiano ricevuto la mia domanda.')">🔊</button></td><td><span class="ipa">/ˈtɛ.mo ke ˈlo.ro non ˈab.bja.no ri.tʃeˈvu.to la ˈmi.a doˈman.da/</span><br><span class="pronuncia-guia">(TÉ-mo ke LÔ-ro non ÁB-bia-no ri-tche-VÚ-to la MÍ-a do-MÁN-da)</span></td><td>Receio que eles não tenham recebido minha solicitação.</td></tr>
+    <tr><td>6. Penso che voi siate stati molto pazienti in quella fila. <button class="audio-btn" onclick="playAudio('Penso che voi siate stati molto pazienti in quella fila.')">🔊</button></td><td><span class="ipa">/ˈpɛn.so ke voi ˈsja.te ˈsta.ti ˈmol.to patˈtsjɛn.ti in ˈkwel.la ˈfi.la/</span><br><span class="pronuncia-guia">(PÊN-so ke vói SIÁ-te STÁ-ti MÓL-to pa-TSIÊN-ti in QUÉL-la FÍ-la)</span></td><td>Acho que vocês foram muito pacientes naquela fila.</td></tr>
+    <tr><td>7. È strano che l'ufficio postale abbia chiuso prima. <button class="audio-btn" onclick="playAudio('È strano che l\'ufficio postale abbia chiuso prima.')">🔊</button></td><td><span class="ipa">/ɛ ˈstra.no ke lufˈfi.tʃo poˈsta.le ˈab.bja ˈkju.zo ˈpri.ma/</span><br><span class="pronuncia-guia">(É STRÁ-no ke luf-FÍ-tcho pos-TÁ-le ÁB-bia QUIÚ-zo PRÍ-ma)</span></td><td>É estranho que os correios tenham fechado mais cedo.</td></tr>
+    <tr><td>8. Dubito che lui abbia detto la verità. <button class="audio-btn" onclick="playAudio('Dubito che lui abbia detto la verità.')">🔊</button></td><td><span class="ipa">/ˈdu.bi.to ke ˈlu.i ˈab.bja ˈdet.to la ve.riˈta/</span><br><span class="pronuncia-guia">(DÚ-bi-to ke LÚ-i ÁB-bia DÉT-to la ve-ri-TÁ)</span></td><td>Duvido que ele tenha dito a verdade.</td></tr>
+    <tr><td>9. Mi dispiace che tu abbia dovuto aspettare tanto. <button class="audio-btn" onclick="playAudio('Mi dispiace che tu abbia dovuto aspettare tanto.')">🔊</button></td><td><span class="ipa">/mi diˈspja.tʃe ke tu ˈab.bja doˈvu.to a.spetˈta.re ˈtan.to/</span><br><span class="pronuncia-guia">(Mi dis-PIÁ-tche ke tu ÁB-bia do-VÚ-to as-pet-TÁ-re TÁN-to)</span></td><td>Sinto muito que você tenha tido que esperar tanto.</td></tr>
+    <tr><td>10. È il documento più importante che io abbia mai firmato. <button class="audio-btn" onclick="playAudio('È il documento più importante che io abbia mai firmato.')">🔊</button></td><td><span class="ipa">/ɛ il do.kuˈmen.to ˈpju im.porˈtan.te ke ˈi.o ˈab.bja ˈmai firˈma.to/</span><br><span class="pronuncia-guia">(É il do-cu-MÊN-to piú im-por-TÁN-te ke Í-o ÁB-bia mái fir-MÁ-to)</span></td><td>É o documento mais importante que eu já assinei.</td></tr>
+    <tr><td>11. Nonostante siamo partiti in ritardo, siamo arrivati in tempo. <button class="audio-btn" onclick="playAudio('Nonostante siamo partiti in ritardo, siamo arrivati in tempo.')">🔊</button></td><td><span class="ipa">/no.noˈstan.te ˈsja.mo parˈti.ti in riˈtar.do ˈsja.mo ar.riˈva.ti in ˈtɛm.po/</span><br><span class="pronuncia-guia">(No-nos-TÁN-te SIÁ-mo par-TÍ-ti in ri-TÁR-do, SIÁ-mo ar-ri-VÁ-ti in TÊM-po)</span></td><td>Apesar de termos partido atrasados, chegamos a tempo.</td></tr>
+    <tr><td>12. È incredibile che loro abbiano finito la pratica in un solo giorno. <button class="audio-btn" onclick="playAudio('È incredibile che loro abbiano finito la pratica in un solo giorno.')">🔊</button></td><td><span class="ipa">/ɛ in.kreˈdi.bi.le ke ˈlo.ro ˈab.bja.no fiˈni.to la ˈpra.ti.ka in un ˈso.lo ˈdʒor.no/</span><br><span class="pronuncia-guia">(É in-cre-DÍ-bi-le ke LÔ-ro ÁB-bia-no fi-NÍ-to la PRÁ-ti-ca in un SÔ-lo DJÓR-no)</span></td><td>É incrível que eles tenham terminado o processo em um só dia.</td></tr>
+    <tr><td>13. Non sono sicuro che lui sia stato sincero. <button class="audio-btn" onclick="playAudio('Non sono sicuro che lui sia stato sincero.')">🔊</button></td><td><span class="ipa">/non ˈso.no siˈku.ro ke ˈlu.i ˈsi.a ˈsta.to sinˈtʃɛ.ro/</span><br><span class="pronuncia-guia">(Non SÔ-no si-CÚ-ro ke LÚ-i SÍ-a STÁ-to sin-TCHÉ-ro)</span></td><td>Não tenho certeza de que ele tenha sido sincero.</td></tr>
+    <tr><td>14. Credi che io abbia detto la cosa sbagliata? <button class="audio-btn" onclick="playAudio('Credi che io abbia detto la cosa sbagliata?')">🔊</button></td><td><span class="ipa">/ˈkre.di ke ˈi.o ˈab.bja ˈdet.to la ˈkɔ.za zbaʎˈʎa.ta/</span><br><span class="pronuncia-guia">(CRÊ-di ke Í-o ÁB-bia DÉT-to la CÓ-za zba-LHIÁ-ta?)</span></td><td>Você acredita que eu tenha dito a coisa errada?</td></tr>
+    <tr><td>15. È un peccato che non siate potuti venire. <button class="audio-btn" onclick="playAudio('È un peccato che non siate potuti venire.')">🔊</button></td><td><span class="ipa">/ɛ um pekˈka.to ke non ˈsja.te poˈtu.ti veˈni.re/</span><br><span class="pronuncia-guia">(É um pek-KÁ-to ke non SIÁ-te po-TÚ-ti ve-NÍ-re)</span></td><td>É uma pena que vocês não tenham podido vir.</td></tr>
+    <tr><td>16. Immagino che tu abbia avuto molto da fare. <button class="audio-btn" onclick="playAudio('Immagino che tu abbia avuto molto da fare.')">🔊</button></td><td><span class="ipa">/imˈma.dʒi.no ke tu ˈab.bja aˈvu.to ˈmol.to da ˈfa.re/</span><br><span class="pronuncia-guia">(Im-MÁ-dji-no ke tu ÁB-bia a-VÚ-to MÓL-to da FÁ-re)</span></td><td>Imagino que você tenha tido muito o que fazer.</td></tr>
+    <tr><td>17. Mi hanno chiesto se avessi già il codice fiscale. <button class="audio-btn" onclick="playAudio('Mi hanno chiesto se avessi già il codice fiscale.')">🔊</button></td><td><span class="ipa">/mi ˈan.no ˈkjɛ.sto se aˈves.si ˈdʒa il ˈkɔ.di.tʃe fiˈska.le/</span><br><span class="pronuncia-guia">(Mi ÁN-no QUIÊS-to se a-VÉS-si djá il CÓ-di-tche fis-CÁ-le)</span></td><td>Me perguntaram se eu já tinha o CPF.</td></tr>
+    <tr><td>18. Ho risposto che non lo avevo ancora richiesto. <button class="audio-btn" onclick="playAudio('Ho risposto che non lo avevo ancora richiesto.')">🔊</button></td><td><span class="ipa">/ɔ riˈspo.sto ke non lo aˈve.vo anˈko.ra riˈkjɛ.sto/</span><br><span class="pronuncia-guia">(Ó ris-PÔS-to ke non lo a-VÊ-vo an-CÔ-ra ri-QUIÊS-to)</span></td><td>Respondi que ainda não o tinha solicitado.</td></tr>
+    <tr><td>19. È la cosa più difficile che abbiamo mai fatto. <button class="audio-btn" onclick="playAudio('È la cosa più difficile che abbiamo mai fatto.')">🔊</button></td><td><span class="ipa">/ɛ la ˈkɔ.za ˈpju difˈfi.tʃi.le ke abˈbja.mo ˈmai ˈfat.to/</span><br><span class="pronuncia-guia">(É la CÓ-za piú dif-FÍ-tchi-le ke ab-BIÁ-mo mái FÁT-to)</span></td><td>É a coisa mais difícil que já fizemos.</td></tr>
+    <tr><td>20. Penso che sia stato un errore fidarsi di lui. <button class="audio-btn" onclick="playAudio('Penso che sia stato un errore fidarsi di lui.')">🔊</button></td><td><span class="ipa">/ˈpɛn.so ke ˈsi.a ˈsta.to un erˈro.re fiˈdar.si di ˈlu.i/</span><br><span class="pronuncia-guia">(PÊN-so ke SÍ-a STÁ-to un er-RÔ-re fi-DÁR-si di LÚ-i)</span></td><td>Acho que foi um erro confiar nele.</td></tr>
+    <tr><td>21. Sono contento che tutto sia andato bene. <button class="audio-btn" onclick="playAudio('Sono contento che tutto sia andato bene.')">🔊</button></td><td><span class="ipa">/ˈso.no konˈtɛn.to ke ˈtut.to ˈsi.a anˈda.to ˈbɛ.ne/</span><br><span class="pronuncia-guia">(SÔ-no con-TÊN-to ke TÚT-to SÍ-a an-DÁ-to BÉ-ne)</span></td><td>Estou contente que tudo tenha corrido bem.</td></tr>
+    <tr><td>22. Non è giusto che loro abbiano ottenuto il permesso e noi no. <button class="audio-btn" onclick="playAudio('Non è giusto che loro abbiano ottenuto il permesso e noi no.')">🔊</button></td><td><span class="ipa">/non ɛ ˈdʒu.sto ke ˈlo.ro ˈab.bja.no ot.teˈnu.to il perˈmes.so e noi nɔ/</span><br><span class="pronuncia-guia">(Non é DJÚS-to ke LÔ-ro ÁB-bia-no ot-te-NÚ-to il per-MÉS-so e nói nó)</span></td><td>Não é justo que eles tenham obtido a permissão e nós não.</td></tr>
+    <tr><td>23. Suppongo che tu abbia già presentato la domanda. <button class="audio-btn" onclick="playAudio('Suppongo che tu abbia già presentato la domanda.')">🔊</button></td><td><span class="ipa">/supˈpoŋ.ɡo ke tu ˈab.bja ˈdʒa pre.zenˈta.to la doˈman.da/</span><br><span class="pronuncia-guia">(Sup-PÔN-go ke tu ÁB-bia djá pre-zen-TÁ-to la do-MÁN-da)</span></td><td>Suponho que você já tenha apresentado a solicitação.</td></tr>
+    <tr><td>24. È il certificato più difficile che io abbia mai richiesto. <button class="audio-btn" onclick="playAudio('È il certificato più difficile che io abbia mai richiesto.')">🔊</button></td><td><span class="ipa">/ɛ il tʃer.ti.fiˈka.to ˈpju difˈfi.tʃi.le ke ˈi.o ˈab.bja ˈmai riˈkjɛ.sto/</span><br><span class="pronuncia-guia">(É il tcher-ti-fi-CÁ-to piú dif-FÍ-tchi-le ke Í-o ÁB-bia mái ri-QUIÊS-to)</span></td><td>É a certidão mais difícil que eu já solicitei.</td></tr>
+    <tr><td>25. Mi auguro che Lei abbia passato un buon fine settimana. <button class="audio-btn" onclick="playAudio('Mi auguro che Lei abbia passato un buon fine settimana.')">🔊</button></td><td><span class="ipa">/mi auˈɡu.ro ke ˈlɛi ˈab.bja pasˈsa.to um bwɔn ˈfi.ne set.tiˈma.na/</span><br><span class="pronuncia-guia">(Mi au-GÚ-ro ke Léi ÁB-bia pas-SÁ-to um buón FÍ-ne set-ti-MÁ-na)</span></td><td>Desejo que o senhor tenha passado um bom fim de semana.</td></tr>
+    <tr><td>26. Credo che ci sia stato un malinteso. <button class="audio-btn" onclick="playAudio('Credo che ci sia stato un malinteso.')">🔊</button></td><td><span class="ipa">/ˈkre.do ke tʃi ˈsi.a ˈsta.to um ma.linˈte.zo/</span><br><span class="pronuncia-guia">(CRÊ-do ke tchi SÍ-a STÁ-to um ma-lin-TÊ-zo)</span></td><td>Acredito que tenha havido um mal-entendido.</td></tr>
+    <tr><td>27. È incredibile che tu non abbia ancora imparato la regola. <button class="audio-btn" onclick="playAudio('È incredibile che tu non abbia ancora imparato la regola.')">🔊</button></td><td><span class="ipa">/ɛ in.kreˈdi.bi.le ke tu non ˈab.bja anˈko.ra im.paˈra.to la ˈrɛ.ɡo.la/</span><br><span class="pronuncia-guia">(É in-cre-DÍ-bi-le ke tu non ÁB-bia an-CÔ-ra im-pa-RÁ-to la RÉ-go-la)</span></td><td>É incrível que você ainda não tenha aprendido a regra.</td></tr>
+    <tr><td>28. È l'unica volta che io sia arrivato in ritardo. <button class="audio-btn" onclick="playAudio('È l\'unica volta che io sia arrivato in ritardo.')">🔊</button></td><td><span class="ipa">/ɛ ˈlu.ni.ka ˈvɔl.ta ke ˈi.o ˈsi.a ar.riˈva.to in riˈtar.do/</span><br><span class="pronuncia-guia">(É LÚ-ni-ca VÓL-ta ke Í-o SÍ-a ar-ri-VÁ-to in ri-TÁR-do)</span></td><td>É a única vez que eu cheguei atrasado.</td></tr>
+    <tr><td>29. Sembra che non abbiano capito le istruzioni. <button class="audio-btn" onclick="playAudio('Sembra che non abbiano capito le istruzioni.')">🔊</button></td><td><span class="ipa">/ˈsem.bra ke non ˈab.bja.no kaˈpi.to le i.strutˈtsjo.ni/</span><br><span class="pronuncia-guia">(SÊM-bra ke non ÁB-bia-no ca-PÍ-to le is-tru-TSIÔ-ni)</span></td><td>Parece que eles não entenderam as instruções.</td></tr>
+    <tr><td>30. Sebbene abbia studiato, non ha passato l'esame. <button class="audio-btn" onclick="playAudio('Sebbene abbia studiato, non ha passato l\'esame.')">🔊</button></td><td><span class="ipa">/sebˈbɛ.ne ˈab.bja stuˈdja.to non a pasˈsa.to leˈza.me/</span><br><span class="pronuncia-guia">(Seb-BÉ-ne ÁB-bia stu-DIÁ-to, non á pas-SÁ-to le-ZÁ-me)</span></td><td>Embora ele tenha estudado, não passou na prova.</td></tr>
+    <tr><td>31. Ho paura che ci siamo persi. <button class="audio-btn" onclick="playAudio('Ho paura che ci siamo persi.')">🔊</button></td><td><span class="ipa">/ɔ paˈu.ra ke tʃi ˈsja.mo ˈpɛr.si/</span><br><span class="pronuncia-guia">(Ó pa-Ú-ra ke tchi SIÁ-mo PÉR-si)</span></td><td>Tenho medo de que tenhamos nos perdido.</td></tr>
+    <tr><td>32. È necessario che voi abbiate compilato tutto. <button class="audio-btn" onclick="playAudio('È necessario che voi abbiate compilato tutto.')">🔊</button></td><td><span class="ipa">/ɛ ne.tʃesˈsa.rjo ke voi abˈbja.te kom.piˈla.to ˈtut.to/</span><br><span class="pronuncia-guia">(É ne-tches-SÁ-rio ke vói ab-BIÁ-te com-pi-LÁ-to TÚT-to)</span></td><td>É necessário que vocês tenham preenchido tudo.</td></tr>
+    <tr><td>33. Voglio che tu mi dica cosa è successo. <button class="audio-btn" onclick="playAudio('Voglio che tu mi dica cosa è successo.')">🔊</button></td><td><span class="ipa">/ˈvɔʎ.ʎo ke tu mi ˈdi.ka ˈkɔ.za ɛ sutˈtʃɛs.so/</span><br><span class="pronuncia-guia">(VÓ-lho ke tu mi DÍ-ca CÓ-za é su-TCHÊS-so)</span></td><td>Quero que você me diga o que aconteceu.</td></tr>
+    <tr><td>34. È improbabile che abbiano già finito. <button class="audio-btn" onclick="playAudio('È improbabile che abbiano già finito.')">🔊</button></td><td><span class="ipa">/ɛ im.proˈba.bi.le ke ˈab.bja.no ˈdʒa fiˈni.to/</span><br><span class="pronuncia-guia">(É im-pro-BÁ-bi-le ke ÁB-bia-no djá fi-NÍ-to)</span></td><td>É improvável que eles já tenham terminado.</td></tr>
+    <tr><td>35. Spero che la mia pratica sia stata approvata. <button class="audio-btn" onclick="playAudio('Spero che la mia pratica sia stata approvata.')">🔊</button></td><td><span class="ipa">/ˈspɛ.ro ke la ˈmi.a ˈpra.ti.ka ˈsi.a ˈsta.ta ap.proˈva.ta/</span><br><span class="pronuncia-guia">(SPÉ-ro ke la MÍ-a PRÁ-ti-ca SÍ-a STÁ-ta ap-pro-VÁ-ta)</span></td><td>Espero que meu processo tenha sido aprovado.</td></tr>
+    <tr><td>36. Immagino che il documento sia scaduto. <button class="audio-btn" onclick="playAudio('Immagino che il documento sia scaduto.')">🔊</button></td><td><span class="ipa">/imˈma.dʒi.no ke il do.kuˈmen.to ˈsi.a skaˈdu.to/</span><br><span class="pronuncia-guia">(Im-MÁ-dji-no ke il do-cu-MÊN-to SÍ-a sca-DÚ-to)</span></td><td>Imagino que o documento tenha vencido.</td></tr>
+    <tr><td>37. Non è certo che lui abbia superato l'esame. <button class="audio-btn" onclick="playAudio('Non è certo che lui abbia superato l\'esame.')">🔊</button></td><td><span class="ipa">/non ɛ ˈtʃɛr.to ke ˈlu.i ˈab.bja su.peˈra.to leˈza.me/</span><br><span class="pronuncia-guia">(Non é TCHÉR-to ke LÚ-i ÁB-bia su-pe-RÁ-to le-ZÁ-me)</span></td><td>Não é certo que ele tenha passado na prova.</td></tr>
+    <tr><td>38. Che peccato che voi non siate venuti! <button class="audio-btn" onclick="playAudio('Che peccato che voi non siate venuti!')">🔊</button></td><td><span class="ipa">/ke pekˈka.to ke voi non ˈsja.te veˈnu.ti/</span><br><span class="pronuncia-guia">(Ke pek-KÁ-to ke vói non SIÁ-te ve-NÚ-ti!)</span></td><td>Que pena que vocês não tenham vindo!</td></tr>
+    <tr><td>39. L'importante è che noi abbiamo fatto del nostro meglio. <button class="audio-btn" onclick="playAudio('L\'importante è che noi abbiamo fatto del nostro meglio.')">🔊</button></td><td><span class="ipa">/lim.porˈtan.te ɛ ke noi abˈbja.mo ˈfat.to del ˈnɔ.stro ˈmɛʎ.ʎo/</span><br><span class="pronuncia-guia">(Lim-por-TÁN-te é ke nói ab-BIÁ-mo FÁT-to del NÓS-tro MÉ-lho)</span></td><td>O importante é que nós tenhamos feito o nosso melhor.</td></tr>
+    <tr><td>40. È l'unica persona che mi abbia mai capito. <button class="audio-btn" onclick="playAudio('È l\'unica persona che mi abbia mai capito.')">🔊</button></td><td><span class="ipa">/ɛ ˈlu.ni.ka perˈso.na ke mi ˈab.bja ˈmai kaˈpi.to/</span><br><span class="pronuncia-guia">(É LÚ-ni-ca per-SÔ-na ke mi ÁB-bia mái ca-PÍ-to)</span></td><td>É a única pessoa que já me entendeu.</td></tr>
+</table>
+
+<!-- Texto para Análise -->
+<h2>5. Texto para Análise: Il Permesso di Soggiorno</h2>
+<p><strong>Leitura em Italiano:</strong></p>
+<p>
+Ottenere il primo permesso di soggiorno in Italia è una vera avventura burocratica. Ricordo ancora la mia esperienza. Sono andato in Questura per presentare la domanda. Credevo di aver portato tutti i documenti necessari, ma il funzionario mi ha detto che ne mancava uno. Ero molto preoccupato. Temevo che avessero respinto la mia pratica solo per un foglio. Sono dovuto tornare a casa a prenderlo. È incredibile che io abbia perso mezza giornata per un solo certificato! Quando finalmente sono tornato allo sportello, ho sperato che l'impiegato non fosse andato in pausa pranzo. Per fortuna era ancora lì. Penso che sia stato comprensivo perché ha visto la mia faccia stanca. Nonostante la procedura sia stata complicata, sono felice che tutto sia andato a buon fine.
+</p>
+<p><strong>Pergunta:</strong> Por que o narrador teve que voltar para casa?</p>
+<ol type="A">
+  <li>Perché l'ufficio aveva chiuso per la pausa pranzo.</li>
+  <li>Perché aveva dimenticato un documento necessario per la pratica.</li>
+  <li>Perché il funzionario non era gentile e non voleva aiutarlo.</li>
+</ol>
+
+<!-- Exercícios -->
+<h2>6. Exercícios de Fixação 📝</h2>
+<div class="secao-exercicios">
+  <h4>Exercícios</h4>
+  <ol class="exercise-list">
+    <li>Complete a frase: "Spero che tu (ricevere) _________ il mio regalo."</li>
+    <li>Escolha a forma correta: "Penso che loro (hanno fatto / abbiano fatto) un ottimo lavoro."</li>
+    <li>Complete a frase: "È strano che lui non (arrivare) _________ ancora."</li>
+    <li>Traduza para o italiano: "Acredito que ela já tenha partido."</li>
+    <li>Complete a frase: "Mi dispiace che voi (aspettare) _________ tanto."</li>
+    <li>Escolha a forma correta: "Non sono sicuro che io (ho capito / abbia capito) tutto."</li>
+    <li>Traduza para o italiano: "Tenho medo de que tenhamos errado."</li>
+    <li>Complete a frase: "Immagino che tu (essere) _________ molto stanca ieri."</li>
+    <li>Escolha a forma correta: "È il miglior libro che io (ho letto / abbia mai letto)."</li>
+    <li>Traduza para o italiano: "É possível que eles não tenham visto seu e-mail."</li>
+  </ol>
+</div>
+
+<!-- Pronúncia -->
+<h2>8. Pronúncia e Repetição 🔉</h2>
+<div class="nota-dica">
+  <h4>Dica de Pronúncia: As Vogais Finais dos Particípios</h4>
+  <p>Agora que você está usando tempos compostos com o auxiliar `essere` em vários modos (Passato Prossimo, Trapassato, Condizionale Composto, Congiuntivo Passato), a concordância do particípio se torna onipresente. Um ponto crucial é pronunciar claramente a vogal final do particípio.</p>
+  <ul>
+    <li>`stato` <button class="audio-btn" onclick="playAudio('stato')">🔊</button> (STÁ-t<strong>o</strong>)</li>
+    <li>`stata` <button class="audio-btn" onclick="playAudio('stata')">🔊</button> (STÁ-t<strong>a</strong>)</li>
+    <li>`stati` <button class="audio-btn" onclick="playAudio('stati')">🔊</button> (STÁ-t<strong>i</strong>)</li>
+    <li>`state` <button class="audio-btn" onclick="playAudio('state')">🔊</button> (STÁ-t<strong>e</strong>)</li>
+  </ul>
+   <p>A diferença entre `lui è stato` e `lei è stata` está apenas nessa vogal final. Em português, tendemos a neutralizar essas vogais, mas em italiano elas devem ser pronunciadas de forma clara e distinta. Pratique dizer as quatro formas em sequência para treinar sua articulação.</p>
+</div>
+
+<!-- Expressões culturais -->
+<h2>9. Expressões Culturais 🇮🇹</h2>
+<div class="bloco-cultural">
+  <h4>La Fila dal Medico</h4>
+  <p>Uma experiência quase universal na Itália é a espera no consultório do "medico di base". Diferente de muitos países onde as consultas têm hora marcada com precisão, na Itália é muito comum que o médico simplesmente indique um horário de atendimento (por exemplo, "dalle 15 alle 18"). Os pacientes chegam dentro desse período e esperam sua vez, geralmente em ordem de chegada. Isso pode levar a longas esperas na "sala d'attesa", que se torna um microcosmo da vida do bairro, onde as pessoas conversam, trocam notícias e, claro, fofocam um pouco. Se você marcar uma consulta, não se surpreenda se tiver que esperar. Leve um bom livro e aproveite para observar um autêntico pedaço da cultura italiana.</p>
+</div>
+
+<!-- Resumo -->
+<h2>10. Resumo da Aula 📑</h2>
+<ul>
+  <li>O <strong>Congiuntivo Passato</strong> é usado para expressar subjetividade (dúvida, opinião, desejo) sobre uma ação <strong>passada</strong>.</li>
+  <li>É formado pelo <strong>Congiuntivo Presente de ESSERE ou AVERE + Particípio Passado</strong>.</li>
+  <li>A ação da frase com subjuntivo é sempre <strong>anterior</strong> à ação da frase principal (ex: <em>Penso ora che tu <strong>abbia studiato</strong> ieri</em>).</li>
+  <li>A escolha do auxiliar e a concordância do particípio seguem as mesmas regras do Passato Prossimo.</li>
+</ul>
+
+<!-- Desafio -->
+<h2>11. Desafio da Aula 🚀</h2>
+<p>Imagine que você combinou de encontrar um amigo, mas ele não apareceu. Escreva 3 frases com suas hipóteses sobre o que pode ter acontecido, usando o Congiuntivo Passato. Use expressões diferentes para iniciar cada frase. Exemplo: <em>"Non è ancora arrivato. Spero che non <strong>abbia avuto</strong> un problema. È possibile che <strong>abbia dimenticato</strong> il nostro appuntamento. Penso che <strong>sia rimasto</strong> bloccato nel traffico."</em>. <em>In bocca al lupo!</em></p>
+
+<!-- Gabarito -->
+<h2>12. Gabarito 📝</h2>
+<div class="gabarito-section">
+  <h4>Seção 5: Texto para Análise</h4>
+  <p>Resposta correta: <strong>B</strong> (Perché aveva dimenticato un documento necessario per la pratica.)</p>
+  <h4>Seção 6: Exercícios de Fixação</h4>
+  <ol>
+    <li>abbia ricevuto</li>
+    <li>abbiano fatto</li>
+    <li>non sia ancora arrivato</li>
+    <li>Credo che lei sia già partita.</li>
+    <li>abbiate aspettato</li>
+    <li>abbia capito</li>
+    <li>Ho paura che noi abbiamo sbagliato.</li>
+    <li>sia stata</li>
+    <li>abbia mai letto</li>
+    <li>È possibile che loro non abbiano visto la tua e-mail.</li>
+  </ol>
+</div>
+
+</body>
+</html>
